@@ -6,5 +6,5 @@ export default defineBuildConfig({
     { input: 'src/module', format: 'esm' },
     { input: 'src/runtime/', outDir: 'dist/runtime' },
   ],
-  externals: ['nuxt', 'fsevents', '@nuxt/schema', '@nuxt/kit', 'laravel-echo'],
+  externals: ['nuxt', '@nuxt/schema', '@nuxt/kit', 'vite', 'laravel-echo'],
 })

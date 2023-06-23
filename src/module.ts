@@ -3,13 +3,13 @@ import {
   addPlugin,
   createResolver,
   defineNuxtModule,
-  findPath,
+  // findPath,
   installModule,
 } from '@nuxt/kit'
 import { searchForWorkspaceRoot } from 'vite'
 import defu from 'defu'
 import { runtimeDir } from './dirs'
-import type { Arrayable, ModuleOptions } from './types'
+import type { ModuleOptions } from './types'
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
@@ -28,22 +28,22 @@ export default defineNuxtModule<ModuleOptions>({
     },
   }),
   setup: async (options, nuxt) => {
-    const configPaths = []
+    // const configPaths = []
 
-    const addConfigPath = async (p: Arrayable<string>) => {
-      const paths = (Array.isArray(p) ? p : [p]).filter(Boolean)
-      for (const path of paths) {
-        const resolvedPath = await findPath(
-          path,
-          { extensions: ['.js', '.cjs', '.mjs', '.ts', '.mts'] },
-          'file',
-        )
-        // only if the path is found
-        if (resolvedPath) {
-          configPaths.push(resolvedPath)
-        }
-      }
-    }
+    // const addConfigPath = async (p: Arrayable<string>) => {
+    //   const paths = (Array.isArray(p) ? p : [p]).filter(Boolean)
+    //   for (const path of paths) {
+    //     const resolvedPath = await findPath(
+    //       path,
+    //       { extensions: ['.js', '.cjs', '.mjs', '.ts', '.mts'] },
+    //       'file',
+    //     )
+    //     // only if the path is found
+    //     if (resolvedPath) {
+    //       configPaths.push(resolvedPath)
+    //     }
+    //   }
+    // }
 
     // @ts-expect-error - module options
     nuxt.options.echo = defu(nuxt.options.echo || {}, options)

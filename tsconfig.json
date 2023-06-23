@@ -10,7 +10,10 @@
       "noUnusedLocals": true,
       "allowSyntheticDefaultImports": true,
       "resolveJsonModule": true,
-      "skipLibCheck": true
+      "skipLibCheck": true,
+      "types": [
+        "node"
+      ]
     },
     "exclude": ["**/node_modules", "**/dist", "**/playground", "**/playgrounds"]
   }

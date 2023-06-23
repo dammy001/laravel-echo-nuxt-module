@@ -37,8 +37,10 @@
   },
   "dependencies": {
     "@nuxt/kit": "^3.6.0",
-    "defu": "^6.1.2",
-    "laravel-echo": "^1.15.1"
+    "defu": "^6.1.2"
+  },
+  "peerDependencies": {
+    "laravel-echo": ">=1.15.1"
   },
   "devDependencies": {
     "@damilaredev/eslint-config": "^0.0.18",
@@ -50,7 +52,8 @@
     "nuxt": "^3.6.0",
     "prettier": "^2.8.8",
     "typescript": "^5.1.3",
-    "unbuild": "^1.2.1"
+    "unbuild": "^1.2.1",
+    "laravel-echo": "^1.15.1"
   },
   "publishConfig": {
     "access": "public"

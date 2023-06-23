@@ -1,4 +1,4 @@
-import { defineBuildConfig } from 'unbuild';
+import { defineBuildConfig } from 'unbuild'
 
 export default defineBuildConfig({
   declaration: true,
@@ -6,5 +6,11 @@ export default defineBuildConfig({
     { input: 'src/module', format: 'esm' },
     { input: 'src/runtime/', outDir: 'dist/runtime' },
   ],
-  externals: ['nuxt', 'nuxt/schema', '@nuxt/schema', '@nuxt/kit'],
-});
+  externals: [
+    'nuxt',
+    'nuxt/schema',
+    '@nuxt/schema',
+    '@nuxt/kit',
+    'laravel-echo',
+  ],
+})

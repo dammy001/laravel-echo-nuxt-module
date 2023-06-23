@@ -1,0 +1,1 @@
+# laravel-echo-nuxt-module

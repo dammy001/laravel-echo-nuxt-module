@@ -8,7 +8,6 @@ import {
 } from '@nuxt/kit'
 import { searchForWorkspaceRoot } from 'vite'
 import defu from 'defu'
-import type { Nuxt } from 'nuxt/schema'
 import { runtimeDir } from './dirs'
 import type { Arrayable, ModuleOptions } from './types'
 
@@ -21,12 +20,14 @@ export default defineNuxtModule<ModuleOptions>({
     },
   },
   defaults: () => ({
-    broadcaster: 'null',
-    encrypted: false,
-    enabledTransports: ['ws', 'wss'],
-    port: 6001,
+    options: {
+      broadcaster: 'null',
+      encrypted: false,
+      enabledTransports: ['ws', 'wss'],
+      port: 6001,
+    },
   }),
-  setup: async (options: ModuleOptions, nuxt: Nuxt) => {
+  setup: async (options, nuxt) => {
     const configPaths = []
 
     const addConfigPath = async (p: Arrayable<string>) => {

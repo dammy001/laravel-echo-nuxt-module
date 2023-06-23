@@ -9,10 +9,15 @@ export type BroadcasterOption =
 export type TransportOption = 'ws' | 'wss'
 
 export interface ModuleOptions {
+  options?: EchoOptions
+  configPath?: Arrayable<string>
+}
+
+export interface EchoOptions {
   /**
    * Pusher client.
    */
-  Pusher?: (key: ModuleOptions['key'], options: ModuleOptions) => void
+  Pusher?: (key: EchoOptions['key'], options: EchoOptions) => void
 
   broadcaster?: BroadcasterOption
 

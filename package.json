@@ -57,6 +57,7 @@
     "format:check": "prettier --check \"./**/*.{vue,js,ts,md}\"",
     "lint": "eslint --cache \"./**/*.{vue,js,ts}\"",
     "lint:fix": "eslint --cache --fix \"./**/*.{vue,js,ts}\"",
+    "release": "bumpp",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

@@ -1,6 +1,7 @@
 import { resolve } from 'node:path'
 import { defineNuxtConfig } from 'nuxt/config'
 import laravelEchoNuxtModule from '../src/module'
+import type { EchoOptions } from '../src/types'
 
 export default defineNuxtConfig({
   modules: [laravelEchoNuxtModule],
@@ -11,7 +12,7 @@ export default defineNuxtConfig({
     wsPort: 80,
     wssPort: 443,
     cluster: 'eu',
-  },
+  } as EchoOptions,
   runtimeConfig: {
     public: {
       pusherKey: process.env.NUXT_PUSHER_APP_KEY,

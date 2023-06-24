@@ -7,4 +7,7 @@ export default defineBuildConfig({
     { input: 'src/runtime/', outDir: 'dist/runtime' },
   ],
   externals: ['nuxt', '@nuxt/schema', '@nuxt/kit', 'vite', 'laravel-echo'],
+  rollup: {
+    inlineDependencies: true,
+  },
 })

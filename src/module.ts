@@ -22,12 +22,10 @@ export default defineNuxtModule<ModuleOptions>({
     },
   },
   defaults: () => ({
-    options: {
-      broadcaster: 'null',
-      encrypted: false,
-      enabledTransports: ['ws', 'wss'],
-      port: 6001,
-    },
+    broadcaster: 'null',
+    encrypted: false,
+    enabledTransports: ['ws', 'wss'],
+    port: 6001,
   }),
   setup: async (options, nuxt) => {
     // @ts-expect-error - module options

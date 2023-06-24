@@ -8,10 +8,7 @@ export type BroadcasterOption =
 
 export type TransportOption = 'ws' | 'wss'
 
-export interface ModuleOptions {
-  options?: EchoOptions
-  configPath?: Arrayable<string>
-}
+export interface ModuleOptions extends EchoOptions {}
 
 export interface EchoOptions {
   /**

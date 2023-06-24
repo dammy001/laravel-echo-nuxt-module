@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "license": "MIT",
   "packageManager": "pnpm@8.6.3",
+  "sideEffects": false,
   "description": "Laravel Echo module for Nuxt 3",
   "engines": {
     "node": ">=16",
@@ -21,6 +22,14 @@
   "author": {
     "name": "Damilare Anjorin",
     "url": "https://github.com/dammy001"
+  },
+  "homepage": "https://github.com/dammy001/laravel-echo-nuxt-module#readme",
+  "bugs": {
+    "url": "https://github.com/dammy001/laravel-echo-nuxt-module/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://https://github.com/dammy001/laravel-echo-nuxt-module.git"
   },
   "exports": {
     ".": {

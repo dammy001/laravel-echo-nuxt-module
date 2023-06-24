@@ -7,6 +7,19 @@ export default defineNuxtConfig({
   echo: {
     options: {
       broadcaster: 'pusher',
+      key: 'app-key',
+      wsHost: 'localhost',
+      wsPort: 80,
+      wssPort: 443,
+      cluster: 'eu',
+    },
+  },
+  runtimeConfig: {
+    public: {
+      pusherKey: process.env.NUXT_PUSHER_APP_KEY,
+      pusherHost: process.env.NUXT_PUSHER_HOST,
+      pusherPort: process.env.NUXT_PUSHER_PORT,
+      pusherScheme: process.env.NUXT_PUSHER_SCHEME,
     },
   },
   nitro: {

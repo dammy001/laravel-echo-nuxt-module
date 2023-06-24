@@ -1,9 +1,11 @@
+// eslint-disable-next-line eslint-comments/disable-enable-pair
+/* eslint-disable no-unused-expressions */
 import { join } from 'node:path'
 import {
   addPlugin,
+  addTemplate,
   createResolver,
   defineNuxtModule,
-  // findPath,
   installModule,
 } from '@nuxt/kit'
 import { searchForWorkspaceRoot } from 'vite'
@@ -28,27 +30,27 @@ export default defineNuxtModule<ModuleOptions>({
     },
   }),
   setup: async (options, nuxt) => {
-    // const configPaths = []
-
-    // const addConfigPath = async (p: Arrayable<string>) => {
-    //   const paths = (Array.isArray(p) ? p : [p]).filter(Boolean)
-    //   for (const path of paths) {
-    //     const resolvedPath = await findPath(
-    //       path,
-    //       { extensions: ['.js', '.cjs', '.mjs', '.ts', '.mts'] },
-    //       'file',
-    //     )
-    //     // only if the path is found
-    //     if (resolvedPath) {
-    //       configPaths.push(resolvedPath)
-    //     }
-    //   }
-    // }
-
     // @ts-expect-error - module options
     nuxt.options.echo = defu(nuxt.options.echo || {}, options)
 
     const resolver = createResolver(import.meta.url)
+
+    // Inject options via virtual template
+    nuxt.options.alias['#nuxt-echo-options'] = addTemplate({
+      filename: 'echo-options.mjs',
+      getContents: () =>
+        Object.entries(options)
+          .map(
+            ([key, value]) =>
+              `export const ${key} = ${JSON.stringify(value, null, 2)}
+      `,
+          )
+          .join('\n'),
+    }).dst
+
+    // nuxt.options.build.transpile.push(resolver.resolve('./runtime'))
+    const runtimeSrc = resolver.resolve('./runtime')
+    nuxt.options.build.transpile.push(runtimeSrc)
 
     addPlugin({
       src: join(runtimeDir, 'plugin.ts'),

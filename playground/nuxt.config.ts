@@ -5,14 +5,12 @@ import laravelEchoNuxtModule from '../src/module'
 export default defineNuxtConfig({
   modules: [laravelEchoNuxtModule],
   echo: {
-    options: {
-      broadcaster: 'pusher',
-      key: 'app-key',
-      wsHost: 'localhost',
-      wsPort: 80,
-      wssPort: 443,
-      cluster: 'eu',
-    },
+    broadcaster: 'pusher',
+    key: 'app-key',
+    wsHost: 'localhost',
+    wsPort: 80,
+    wssPort: 443,
+    cluster: 'eu',
   },
   runtimeConfig: {
     public: {

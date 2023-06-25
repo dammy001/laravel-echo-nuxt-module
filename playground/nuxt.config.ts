@@ -6,12 +6,14 @@ import type { EchoOptions } from '../src/types'
 export default defineNuxtConfig({
   modules: [laravelEchoNuxtModule],
   echo: {
-    broadcaster: 'pusher',
-    key: 'app-key',
-    wsHost: 'localhost',
-    wsPort: 80,
-    wssPort: 443,
-    cluster: 'eu',
+    options: {
+      broadcaster: 'pusher',
+      key: 'app-key',
+      wsHost: 'localhost',
+      wsPort: 80,
+      wssPort: 443,
+      cluster: 'eu',
+    },
   } as EchoOptions,
   runtimeConfig: {
     public: {

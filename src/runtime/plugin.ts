@@ -16,8 +16,12 @@ declare global {
 }
 
 export default defineNuxtPlugin((nuxt: any) => {
-  if (options?.broadcaster === 'pusher' && !options?.encrypted) {
-    if (!window.Pusher) window.Pusher = Pusher
+  if (options?.broadcaster === 'pusher') {
+    if (options?.encrypted) {
+      if (!window.Pusher) window.Pusher = require('pusher-js/with-encryption')
+    } else {
+      if (!window.Pusher) window.Pusher = Pusher
+    }
   }
 
   if (options?.broadcaster === 'socket.io') {
@@ -26,7 +30,7 @@ export default defineNuxtPlugin((nuxt: any) => {
 
   window.Echo = new Echo({ ...options })
 
-  nuxt.vueApp.config.globalProperties.$echo as Echo
+  nuxt.vueApp.config.globalProperties.$echo = window.Echo as Echo
   nuxt.vueApp.echo = window.Echo
 
   return {

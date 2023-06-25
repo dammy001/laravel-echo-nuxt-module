@@ -2,6 +2,7 @@ import { defineBuildConfig } from 'unbuild'
 import pkg from './package.json'
 
 export default defineBuildConfig({
+  clean: true,
   declaration: true,
   entries: [
     { input: 'src/module', format: 'esm' },

@@ -22,10 +22,12 @@ export default defineNuxtModule<ModuleOptions>({
     },
   },
   defaults: () => ({
-    broadcaster: 'null',
-    encrypted: false,
-    enabledTransports: ['ws', 'wss'],
-    port: 6001,
+    options: {
+      broadcaster: 'null',
+      encrypted: false,
+      enabledTransports: ['ws', 'wss'],
+      port: 6001,
+    },
   }),
   setup: async (options, nuxt) => {
     // @ts-expect-error - module options
@@ -46,9 +48,7 @@ export default defineNuxtModule<ModuleOptions>({
           .join('\n'),
     }).dst
 
-    // nuxt.options.build.transpile.push(resolver.resolve('./runtime'))
-    const runtimeSrc = resolver.resolve('./runtime')
-    nuxt.options.build.transpile.push(runtimeSrc)
+    nuxt.options.build.transpile.push(resolver.resolve('./runtime'))
 
     addPlugin({
       src: join(runtimeDir, 'plugin.ts'),

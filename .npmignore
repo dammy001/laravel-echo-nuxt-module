@@ -1,0 +1,4 @@
+.prettierrc.cjs
+.eslintrc.cjs
+.eslintignore
+.prettierignore

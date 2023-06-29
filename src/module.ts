@@ -55,6 +55,10 @@ export default defineNuxtModule<ModuleOptions>({
       mode: 'client',
     })
 
+    nuxt.hook('imports:dirs', (dirs) => {
+      dirs.push(join(runtimeDir, 'composables'))
+    })
+
     nuxt.hook('vite:extendConfig', (config) => {
       config.server ||= {}
       config.server.fs ||= {}

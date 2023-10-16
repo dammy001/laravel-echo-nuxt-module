@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "license": "MIT",
-  "packageManager": "pnpm@8.7.6",
+  "packageManager": "pnpm@8.9.2",
   "sideEffects": false,
   "description": "Laravel Echo module for Nuxt 3",
   "engines": {

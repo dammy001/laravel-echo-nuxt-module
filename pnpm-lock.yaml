@@ -48,7 +48,7 @@ devDependencies:
     version: 2.8.8
   pusher-js:
     specifier: ^8.2.0
-    version: 8.2.0
+    version: 8.3.0
   socket.io:
     specifier: ^4.7.0
     version: 4.7.5
@@ -6051,8 +6051,8 @@ packages:
     resolution: {integrity: sha512-rRV+zQD8tVFys26lAGR9WUuS4iUAngJScM+ZRSKtvl5tKeZ2t5bvdNFdNHBW9FWR4guGHlgmsZ1G7BSm2wTbuA==}
     engines: {node: '>=6'}
 
-  /pusher-js@8.2.0:
-    resolution: {integrity: sha512-t3WhhR7vgAr5ARl0VNiAqXOb7g4hyW7CNA9Q11tnlcn8dX+1bFZhgRP6IqWVzTX9n7fgjcji3UQ3y8FEMc1o7Q==}
+  /pusher-js@8.3.0:
+    resolution: {integrity: sha512-6GohP06WlVeomAQQe9qWh1IDzd3+InluWt+ZUOcecVK1SEQkg6a8uYVsvxSJm7cbccfmHhE0jDkmhKIhue8vmA==}
     dependencies:
       tweetnacl: 1.0.3
     dev: true
